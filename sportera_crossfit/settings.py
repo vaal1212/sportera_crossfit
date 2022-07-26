@@ -15,9 +15,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()  # take environment variables from .env.
-print("loaded env")
-import os
-print(f"SECRET:{os.getenv('SECRET_KEY')}")
+# print("loaded env")
+# import os
+# print(f"SECRET:{os.getenv('SECRET_KEY')}")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
