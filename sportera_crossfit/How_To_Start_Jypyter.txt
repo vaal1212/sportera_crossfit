@@ -1,0 +1,7 @@
+# import os
+# import django
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'crossfit.settings')
+# os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+# django.setup()
+
+#python manage.py shell_plus --notebook
