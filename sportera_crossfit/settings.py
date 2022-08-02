@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key is moved to .env file and was changed as it was in previous commits. 
 # .env will not be included to the commits.
 SECRET_KEY = os.getenv('SECRET_KEY')
-DB_USER_PASS = os.getenv("DB_USER_PASS")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,30 +87,14 @@ WSGI_APPLICATION = 'sportera_crossfit.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#How to install Postgres for Django: https://djangocentral.com/using-postgresql-with-django/
-#Portable postgres: https://garethflowers.dev/postgresql-portable/
-
-#SQL to execute in PostGres: 
-#   CREATE DATABASE itea_crossfit_project_db1;
-#   CREATE USER django_user WITH ENCRYPTED PASSWORD 'PASS_IS_IN_.env_file';
-#   ALTER ROLE django_user SET client_encoding TO 'utf8';
-#   ALTER ROLE django_user SET default_transaction_isolation TO 'read committed';
-#   ALTER ROLE django_user SET timezone TO 'EET';
-#   GRANT ALL PRIVILEGES ON DATABASE itea_crossfit_project_db1 TO django_user;
-
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'itea_crossfit_project_db1',
-        'USER': 'django_user',
-        'PASSWORD': DB_USER_PASS,
-        'HOST': 'localhost',
-        'PORT': '', #Default is 5432
+        'ENGINE': os.getenv("DJANGO_DB_ENGINE"),
+        'NAME': os.getenv("DJANGO_DB_NAME"),
+        'USER': os.getenv("DJANGO_DB_USER"),
+        'PASSWORD': os.getenv("DJANGO_DB_USER_PASS"),
+        'HOST': os.getenv("DJANGO_DB_HOST"),
+        'PORT': os.getenv("DJANGO_DB_PORT"), #Default is 5432
     }
 }
 
