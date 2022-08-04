@@ -1,7 +1,3 @@
 db.sqlite3
-backend/.env
-sportera_crossfit/__pycache__/__init__.cpython-38.pyc
-sportera_crossfit/__pycache__/settings.cpython-38.pyc
-sportera_crossfit/__pycache__/urls.cpython-38.pyc
-sportera_crossfit/__pycache__/wsgi.cpython-38.pyc
+sportera_crossfit/__pycache__/*.*
 sportera_crossfit/.env
